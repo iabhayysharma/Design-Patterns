@@ -1,5 +1,5 @@
 package DesignPatterns.Creational.SingleTon;
 
-public enum DBEnum {
+public enum Enum {
     INSTANCE;
 }

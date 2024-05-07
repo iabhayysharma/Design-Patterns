@@ -2,16 +2,27 @@ package DesignPatterns.Creational.SingleTon;
 
 public class Main {
     public static void main(String[] Args) {
-        DatabaseConfiguration databaseConfiguration=DatabaseConfiguration.getDbConfigInstance();
-        System.out.println(databaseConfiguration.getDbConfigInstance());
-        System.out.println(databaseConfiguration.getDbConfigInstance());
-        System.out.println(databaseConfiguration.getDbConfigInstance());
-        System.out.println(DBEnum.INSTANCE.hashCode());
-        System.out.println(DBEnum.INSTANCE.hashCode());
-        System.out.println(DBEnum.INSTANCE.hashCode());
 
-        DatabaseConfigurationLazyLoading databaseConfigurationLazyLoading=DatabaseConfigurationLazyLoading.getInstance();
-        System.out.println(databaseConfigurationLazyLoading);
-        System.out.println(databaseConfigurationLazyLoading);
+        //This function prints the Instance of the singleton class
+
+        System.out.println("Early Loading Singleton");
+        //Notice the instance name is same on calling again and again
+        System.out.println(EarlyLoading.getDbConfigInstance());
+        System.out.println(EarlyLoading.getDbConfigInstance());
+        System.out.println(EarlyLoading.getDbConfigInstance());
+
+        System.out.println("Lazy Loading Singleton");
+        //Notice the instance name is same on calling again and again
+        System.out.println(LazyLoading.getInstance());
+        System.out.println(LazyLoading.getInstance());
+        System.out.println(LazyLoading.getInstance());
+
+        System.out.println("Enum Singleton");
+        //Notice the hashcode is same on calling again and again
+        System.out.println(Enum.INSTANCE.hashCode());
+        System.out.println(Enum.INSTANCE.hashCode());
+        System.out.println(Enum.INSTANCE.hashCode());
+
+
     }
 }
